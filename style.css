@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "topo topo topo"
+    "menu menu menu"
+    "esquerda principal direita"
+    "rodape rodape rodape";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+header.topo {
+  grid-area: topo;
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+header img.banner {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+nav.menu {
+  grid-area: menu;
+  background: #333;
+  padding: 10px;
+}
+
+nav.menu ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+nav.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+main.principal {
+  grid-area: principal;
+  padding: 20px;
+  background: #f2f2f2;
+}
+
+aside.esquerda,
+aside.direita {
+  background: #ddd;
+  padding: 20px;
+}
+
+aside.esquerda {
+  grid-area: esquerda;
+}
+
+aside.direita {
+  grid-area: direita;
+}
+
+footer.rodape {
+  grid-area: rodape;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "topo"
+      "menu"
+      "principal"
+      "esquerda"
+      "direita"
+      "rodape";
+    grid-template-columns: 1fr;
+  }
+
+  nav.menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.noticia {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.noticia-img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
